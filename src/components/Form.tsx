@@ -68,7 +68,8 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="bg-white p-6 py-3 rounded-lg shadow-xl space-y-2 w-full sm:w-96">
+        <form onSubmit={handleSubmit} className="bg-white p-6 py-3 rounded-lg shadow-xl w-96">
+            <p className='text- text-2xl font-semibold my-4'>Renseignez les <br /> informations du receveur</p>
             {Object.keys(formData).map((field) => (
                 <div key={field}>
                     <label htmlFor={field} className="block text-gray-700 font-medium">
@@ -88,7 +89,7 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
             <div className='w-full flex justify-center'>
                 {error && <p className="text-red-500 text-sm">{error}</p>}
                 
-                <button type="submit" className={`px-6 py-2 my-2 rounded-lg ${loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'} text-white`}>
+                <button type="submit" className={`mt-6 px-6 py-2 my-2 rounded-lg ${loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'} text-white`}>
                     {loading ? "Génération du QR Code..." : "Générer le QR Code"}
                 </button>
             </div>
