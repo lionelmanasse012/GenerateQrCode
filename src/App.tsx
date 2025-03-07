@@ -14,19 +14,33 @@ type FormData = {
 const App: React.FC = () => {
     const [qrCode, setQrCode] = useState<string | null>(null);
     const [formData, setFormData] = useState<FormData | null>(null);
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     const handleFormSubmit = (qrCodeImage: string, data: FormData): void => {
         setQrCode(qrCodeImage);
         setFormData(data);
+        setShowModal(true); // Affiche le modal après soumission
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
     };
 
     return (
-        <div className="bg-gray-100 flex flex-col items-center min-h-screen py-6">
+        <div className="bg-gray-100 flex flex-col items-center h-screen">
             <NavBar />
-            <div className="mt-44 lg:mt-24 flex flex-wrap justify-center w-full px-4 max-w-7xl gap-10">
+            <div className="flex justify-center h-full w-full items-center px-4">
                 <Form onSubmit={handleFormSubmit} />
-                <QRCodeDisplay qrCode={qrCode} formData={formData} />
             </div>
+
+            {/* Modal */}
+            {showModal && (
+                <QRCodeDisplay 
+                    qrCode={qrCode} 
+                    formData={formData} 
+                    onClose={handleCloseModal} 
+                />
+            )}
         </div>
     );
 };
