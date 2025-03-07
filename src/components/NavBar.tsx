@@ -6,7 +6,7 @@ const NavBar: React.FC = () => {
             <img
                 className="h-16 w-auto mb-2"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvDgfgXlz4XF2_T6_WgQp_wWV8ZM31-NHVstY8xA3zKDnGyivJQfj-h00UkpURUDrWv3k&usqp=CAU"
-                alt="Drapeau"
+                alt="logo"
             />
             <h2 className="text-xl font-semibold uppercase text-center text-gray-800">
                 MINISTÈRE PROVINCIAL DES MINES, HYDROCARBURES ET PORTEFEUILLE
