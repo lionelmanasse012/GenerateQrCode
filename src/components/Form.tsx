@@ -86,6 +86,8 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
                 </div>
             ))}
             <div className='w-full flex justify-center'>
+                {error && <p className="text-red-500 text-sm">{error}</p>}
+                
                 <button type="submit" className={`px-6 py-2 my-2 rounded-lg ${loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'} text-white`}>
                     {loading ? "Génération du QR Code..." : "Générer le QR Code"}
                 </button>
